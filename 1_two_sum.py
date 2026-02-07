@@ -30,6 +30,29 @@ class Solution(object):
         print(f'values that add up to target : {result}')
         return ([nums.index(result[0]), nums.index(result[1])])
 
+
+    def twoSum2(self, nums, target):
+        """
+        :type nums: List[int]
+        :type target: int
+        :rtype: List[int]
+        """
+
+        # hash map principle
+        nums_dict = {}
+        
+        for position in range(len(nums)) :
+            print(f'Looking for match for number {num} at index {position}')
+            expected_result = target - nums[position]
+            if expected_result in nums_dict :
+                print(f'Found for number {num} at position {position}')
+                print(f'input : {nums}')
+                return ([position, nums_dict[expected_result]])
+            else : print('Not found yet')
+
+            nums_dict[nums[position]] = position
+            print(nums_dict)
+
 '''
 Time complexity : 
 Edge-case numpy where O(n)
